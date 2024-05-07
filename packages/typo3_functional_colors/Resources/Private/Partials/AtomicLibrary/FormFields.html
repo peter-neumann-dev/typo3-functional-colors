@@ -1,0 +1,162 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="library-section">
+    <f:render partial="AtomicLibrary/Section/Header" arguments="{
+        title: 'Form fields',
+        bgAll: 1
+    }"/>
+    <div class="library-section__content">
+        <form action="#">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3.2rem;">
+                <div class="col">
+                    <fieldset class="form-element form-element-fieldset">
+                        <legend>Basic elements</legend>
+
+                        <div class="form-element form-element-text">
+                            <label class="form-label" for="form-text-1">Standard Input<span
+                                class="required">*</span></label>
+                            <input aria-describedby="form-text-1-desc" class="form-control" id="form-text-1"
+                                   placeholder="Placeholder" required="required" type="text" value="">
+                            <span class="form-text" id="form-text-1-desc">I am a description</span>
+                        </div>
+
+                        <div class="form-element form-element-textarea">
+                            <label class="form-label" for="form-textarea-1">Textarea</label>
+                            <textarea class="form-control xxlarge" id="form-textarea-1"
+                                      placeholder="Your message here …"></textarea>
+                        </div>
+
+                        <div class="form-element form-element-password">
+                            <label class="form-label" for="form-password-1">Password</label>
+                            <input class="form-control" id="form-password-1" type="password" value="">
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-element form-element-fieldset" id="form-fieldset-2">
+                        <legend>Special fields</legend>
+
+                        <div class="form-element form-element-email">
+                            <label class="form-label" for="form-email-1">E-Mail address</label>
+                            <input class="form-control" id="form-email-1" type="email" value="">
+                        </div>
+
+                        <div class="form-element form-element-phone">
+                            <label class="form-label" for="form-telephone-1">Phone number</label>
+                            <input class="form-control" id="form-telephone-1" type="tel" value="">
+                        </div>
+
+                        <div class="form-element form-element-url">
+                            <label class="form-label" for="form-url-1">URL / Link</label>
+                            <input class="form-control" id="form-url-1" type="url" value="">
+                        </div>
+
+                        <div class="form-element form-element-number">
+                            <label class="form-label" for="form-number-1">Number field</label>
+                            <input class="form-control" id="form-number-1" max="10" min="1" step="1" type="number"
+                                   value="">
+                        </div>
+
+                        <div class="form-element form-element-date">
+                            <label class="form-label" for="form-date-1">Date</label>
+                            <input class="form-control" id="form-date-1" step="1" type="date" value="">
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col">
+                    <fieldset class="form-element form-element-fieldset" id="form-fieldset-3">
+                        <legend>Selection fields</legend>
+
+                        <div class="form-element form-element-check">
+                            <label class="form-check-wrapping-label" for="form-checkbox-1">
+                                <input class="form-check-input" id="form-checkbox-1" type="checkbox" value="1">
+                                <span class="form-check-label">A normal checkbox</span>
+                            </label>
+                        </div>
+
+                        <div class="form-element form-element-select">
+                            <label class="form-label" for="form-singleselect-1">Select</label>
+                            <select class="form-control" id="form-singleselect-1">
+                                <option value="">Select Color …</option>
+                                <option value="Blue">Blue</option>
+                                <option value="Red">Red</option>
+                                <option value="Green">Green</option>
+                                <option value="Black">Black</option>
+                            </select>
+                        </div>
+
+                        <fieldset class="form-element form-element-radio">
+                            <legend class=" visually-hidden">Radio Buttons</legend>
+                            <div aria-label="Radio Buttons" class="" id="form-radiobutton-1" role="radiogroup">
+                                <div class="form-check">
+                                    <label class="form-check-wrapping-label" for="form-radiobutton-1-0">
+                                        <input class="form-check-input" id="form-radiobutton-1-0" type="radio"
+                                               value="Erste Option" name="radiobutton-1">
+                                        <span class="form-check-label">First option</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-wrapping-label" for="form-radiobutton-1-1">
+                                        <input class="form-check-input" id="form-radiobutton-1-1" type="radio"
+                                               value="Seite Option" name="radiobutton-1">
+                                        <span class="form-check-label">Second option</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-wrapping-label" for="form-radiobutton-1-2">
+                                        <input class="form-check-input" id="form-radiobutton-1-2" type="radio"
+                                               value="Dritte Option" name="radiobutton-1">
+                                        <span class="form-check-label">Third option</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-element form-element-radio">
+                            <legend class="">Checkbox (multi)</legend>
+                            <div aria-label="Checkbox (multi)" class="" id="form-multicheckbox-1" role="radiogroup">
+                                <div class="form-check">
+                                    <label class="form-check-wrapping-label" for="form-multicheckbox-1-0">
+                                        <input class="form-check-input" id="form-multicheckbox-1-0" type="checkbox"
+                                               value="Option Nummer 1">
+                                        <span class="form-check-label">Option number 1</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-wrapping-label" for="form-multicheckbox-1-1">
+                                        <input class="form-check-input" id="form-multicheckbox-1-1" type="checkbox"
+                                               value="Option Nummer 2">
+                                        <span class="form-check-label">Option number 2</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-wrapping-label" for="form-multicheckbox-1-2">
+                                        <input class="form-check-input" id="form-multicheckbox-1-2" type="checkbox"
+                                               value="Option Nummer 3">
+                                        <span class="form-check-label">Option number 3</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-element form-element-multiselect">
+                            <label class="form-label" for="form-multiselect-1">Multiple selection</label>
+                            <select class="form-control xlarge" id="form-multiselect-1" multiple="multiple">
+                                <option selected="selected" value="1">First option</option>
+                                <option value="2">Second option</option>
+                                <option value="3">Third option</option>
+                                <option value="4">Fourth option</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset id="form-fieldset-4" class="form-element form-element-fieldset">
+                        <legend>Advanced elements</legend>
+                        <div class="form-element form-element-text">
+                            <label class="form-label" for="form-text-2">Disabled Input</label>
+                            <input aria-describedby="form-text-2-desc" class="form-control" id="form-text-2"
+                                   placeholder="Placeholder" required="required" type="text" value="" disabled>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</html>

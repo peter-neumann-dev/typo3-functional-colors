@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <f:for each="{data.image}" as="image">
+        <figure class="image">
+            <f:link.typolink parameter="{image.link}" class="image__link">
+                <f:render section="Image" arguments="{image: image}" />
+            </f:link.typolink>
+            <f:if condition="{image.description}">
+                <figcaption class="image__caption"><f:format.nl2br>{image.description}</f:format.nl2br></figcaption>
+            </f:if>
+        </figure>
+    </f:for>
+</f:section>
+
+<f:section name="Image">
+    <picture>
+        <f:if condition="{image.properties.width} > 850">
+            <f:then>
+                <source
+                  srcset="{f:uri.image(image: image, width: 850, fileExtension: 'webp')} 1x,
+                          {f:uri.image(image: image, width: 1700, fileExtension: 'webp')} 2x"
+                  media="(min-width: 992px)"
+                >
+            </f:then>
+            <f:else>
+                <source srcset="{f:uri.image(image: image, maxWidth: 850, fileExtension: 'webp')}" media="(min-width: 992px)">
+            </f:else>
+        </f:if>
+
+        <source srcset="{f:uri.image(image: image, maxWidth: 850, fileExtension: 'webp')}" media="(min-width: 576px)">
+
+        <f:image
+          class="image__image"
+          image="{image}" maxWidth="530" loading="lazy"
+          alt="{image.alternative}" title="{image.title}" fileExtension="webp"
+        />
+    </picture>
+</f:section>
+
+</html>

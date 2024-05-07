@@ -1,0 +1,28 @@
+name: peter-neumann-dev/image
+group: common
+priority: 90
+fields:
+  - identifier: TYPO3/Header
+    type: Basic
+  - identifier: image
+    useExistingField: true
+    cropVariants:
+      default:
+        title: LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.crop_variant.default
+        selectedRatio: NaN
+        allowedAspectRatios:
+          16:9:
+            title: 16:9
+            value: 16 / 9
+          3:2:
+            title: 3:2
+            value: 3 / 2
+          4:4:
+            title: 4:4
+            value: 4 / 4
+          1:1:
+            title: 1:1
+            value: 1.0
+          NaN:
+            title: LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free
+            value: 0.0

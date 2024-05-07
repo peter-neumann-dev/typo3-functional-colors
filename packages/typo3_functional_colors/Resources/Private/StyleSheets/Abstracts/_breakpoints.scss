@@ -1,0 +1,51 @@
+@use 'sass:map';
+
+// =======================
+// ===== Breakpoints =====
+// =======================
+
+// Based on 16px pattern
+$breakpoints: (
+  xxl: 87.5rem,
+  // 1400px
+  xl: 75rem,
+  // 1200p
+  lg: 62rem,
+  // 992px
+  md: 48rem,
+  // 768px
+  sm: 36rem,
+  // 576px
+  xs: 24rem,
+  // 384px
+);
+
+@mixin breakpoint-min($breakpoint) {
+  // If the key exists in the map
+  @if map.has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: #{map.get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @error 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. ' + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+  }
+}
+
+@mixin breakpoint-max($breakpoint) {
+  // If the key exists in the map
+  @if map.has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (max-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @error 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. ' + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+  }
+}

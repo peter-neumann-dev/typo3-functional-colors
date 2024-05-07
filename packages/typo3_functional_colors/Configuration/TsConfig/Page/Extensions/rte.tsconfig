@@ -1,0 +1,2 @@
+# Select CKEditor preset
+RTE.default.preset = typo3_functional_colors

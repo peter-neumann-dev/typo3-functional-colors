@@ -1,0 +1,77 @@
+@use 'sass:math';
+@use 'functions' as functions;
+
+// =================
+// ===== Fonts =====
+// =================
+
+$font-main: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+// ======================
+// ===== Font Sizes =====
+// ======================
+
+// Main font size
+$-main-size: 1.6rem;
+$-main-size-desktop: 1.8rem;
+$font-main-line-height: 1.5;
+
+// min-viewport 579px / max-viewport 1200px
+$font-main-size-fluid: functions.clamp-calc(
+  57.9rem,
+  120rem,
+  $-main-size,
+  $-main-size-desktop
+);
+
+// Small / Fineprint font size
+$-small-size: 1.4rem;
+$-small-size-desktop: 1.6rem;
+
+// min-viewport 579px / max-viewport 1200px
+$font-small-size-fluid: functions.clamp-calc(
+  57.9rem,
+  120rem,
+  $-small-size,
+  $-small-size-desktop
+);
+
+// ====================
+// ===== Headings =====
+// ====================
+
+$font-headings-line-height: 1.2;
+
+$font-h1-size: 4.1rem;
+$font-h1-size-desktop: 5.1rem;
+
+// min-viewport 579px / max-viewport 1200px
+$font-h1-size-fluid: functions.clamp-calc(
+  57.9rem,
+  120rem,
+  $font-h1-size,
+  $font-h1-size-desktop
+);
+
+$font-h2-size: 3.2rem;
+$font-h2-size-desktop: 4rem;
+
+// min-viewport 579px / max-viewport 1200px
+$font-h2-size-fluid: functions.clamp-calc(
+  57.9rem,
+  120rem,
+  $font-h2-size,
+  $font-h2-size-desktop
+);
+
+$font-h3-size: 2.6rem;
+$font-h3-size-desktop: 3.2rem;
+
+// min-viewport 579px / max-viewport 1200px
+$font-h3-size-fluid: functions.clamp-calc(
+  57.9rem,
+  120rem,
+  $font-h3-size,
+  $font-h3-size-desktop
+);

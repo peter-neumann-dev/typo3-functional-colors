@@ -1,0 +1,8 @@
+lib.contentBlock {
+  layoutRootPaths.100 = {$typo3_functional_colors.contentLayoutRootPath}
+  partialRootPaths.100 = {$typo3_functional_colors.contentPartialRootPath}
+
+  settings {
+    idRootPage = {$localConstants.idRootPage}
+  }
+}

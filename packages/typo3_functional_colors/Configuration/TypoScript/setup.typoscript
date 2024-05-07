@@ -1,0 +1,13 @@
+# ==============================
+# ===== Include TypoScript =====
+# ==============================
+
+# Include extensions TypoScript
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
+
+# Include local TypoScript
+@import './Setup/Library/'
+@import './Setup/Config/'
+@import './Setup/ContentElements/'
+@import './Setup/Extensions/'
+@import './Setup/Page/'

@@ -1,0 +1,27 @@
+# Include template and connect with content-column and backend layout
+page = PAGE
+page {
+  meta {
+    keywords.field = keywords
+    description.field = description
+    viewport = width=device-width, initial-scale=1
+    theme-color = #151e28
+  }
+
+  10 = FLUIDTEMPLATE
+  10 {
+    templateName = Default
+    layoutRootPaths.10 = {$typo3_functional_colors.layoutRootPath}
+    partialRootPaths.10 = {$typo3_functional_colors.partialRootPath}
+    templateRootPaths.10 = {$typo3_functional_colors.templateRootPath}
+
+    settings {
+      idRootPage = {$localConstants.idRootPage}
+    }
+  }
+}
+
+[traverse(page, "uid") == {$localConstants.idAtomicLibrary}]
+  page.10.templateName >
+  page.10.templateName = AtomicLibrary
+[end]

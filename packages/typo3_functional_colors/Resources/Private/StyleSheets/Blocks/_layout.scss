@@ -1,0 +1,41 @@
+@use '../Abstracts/index' as lib;
+
+// ===============================
+// ===== Default Page Layout =====
+// ===============================
+
+body {
+  min-height: 100vh;
+}
+
+.main {
+  isolation: isolate;
+
+  &--onscroll-fading {
+    position: relative;
+
+    > .frame {
+      min-height: 100dvh;
+      display: grid;
+      place-content: center;
+      background-color: unset;
+    }
+  }
+
+  &__dynamic-background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transition: background-color 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  > *:last-child {
+    padding-block-end: lib.$frame-block-padding;
+
+    @include lib.breakpoint-min(sm) {
+      padding-block-end: lib.$frame-block-padding-desktop;
+    }
+  }
+}

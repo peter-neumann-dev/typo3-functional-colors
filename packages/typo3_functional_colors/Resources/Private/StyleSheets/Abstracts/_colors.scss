@@ -1,0 +1,344 @@
+@use 'sass:color';
+
+// ==================
+// ===== Colors =====
+// ==================
+
+$col-white: #fff;
+$col-black: #000;
+
+$col-orange: #ff8700;
+
+// Generated using https://uicolors.app/
+$col-orange-50: #fffbec;
+$col-orange-100: #fff5d3;
+$col-orange-200: #ffe8a5;
+$col-orange-300: #ffd56d;
+$col-orange-400: #ffb732;
+$col-orange-500: #ff9f0a;
+$col-orange-600: $col-orange;
+$col-orange-700: #cc6302;
+$col-orange-800: #a14c0b;
+$col-orange-900: #82400c;
+$col-orange-950: #461e04;
+
+$col-gray: #515151;
+
+// Generated using https://uicolors.app/
+$col-gray-50: #f6f6f6;
+$col-gray-100: #e7e7e7;
+$col-gray-200: #d1d1d1;
+$col-gray-300: #b0b0b0;
+$col-gray-400: #888;
+$col-gray-500: #6d6d6d;
+$col-gray-600: #5d5d5d;
+$col-gray-700: $col-gray;
+$col-gray-800: #454545;
+$col-gray-900: #3d3d3d;
+$col-gray-950: #262626;
+
+$col-blue: #0080c9;
+
+// Generated using https://uicolors.app/
+$col-blue-50: #f0f9ff;
+$col-blue-100: #e0f1fe;
+$col-blue-200: #b9e4fe;
+$col-blue-300: #7cd0fd;
+$col-blue-400: #36b9fa;
+$col-blue-500: #0ca1eb;
+$col-blue-600: $col-blue;
+$col-blue-700: #0165a3;
+$col-blue-800: #065686;
+$col-blue-900: #0b486f;
+$col-blue-950: #072d4a;
+
+$col-text: $col-gray-950;
+
+// Code
+$col-code-bg-dark: $col-gray-950;
+$col-code-border-dark: $col-gray-300;
+$col-code-text-dark: $col-orange;
+
+$col-code-bg-light: $col-gray-50;
+$col-code-border-light: $col-gray;
+$col-code-text-light: $col-orange-700;
+
+// === Functional colors ===
+
+// These colors are created as css custom properties and are used to adjust
+// the color of atoms in relation to the current background color. They are
+// redefined within the background color utilities.
+
+// All colors that need to change for backgrounds are defined here and
+// applied to the base typography, atoms and modules.
+
+// Please also define the variable also as SCSS variable to be able to
+// use it to avoid typos since only the SCSS variable is checked by the compiler.
+
+$var-background: var(--col-background);
+
+// Text
+$var-text: var(--col-text);
+$var-text-highlight: var(--col-text-highlight);
+$var-text-highlight-bg: var(--col-text-highlight-bg);
+$var-text-light: var(--col-text-light);
+$var-text-marked: var(--col-text-marked);
+$var-text-marked-bg: var(--col-text-marked-bg);
+$var-hori-rule: var(--col-hori-rule);
+$var-list-marker: var(--col-list-marker);
+
+// Links
+$var-link: var(--col-link);
+$var-link-hover: var(--col-link-hover);
+$var-link-decoration: var(--col-link-decoration);
+$var-link-decoration-hover: var(--col-link-decoration-hover);
+
+// Code
+$var-code-bg: var(--col-code-bg);
+$var-code-border: var(--col-code-border);
+$var-code-text: var(--col-code-text);
+
+// Buttons
+$var-button-bg: var(--col-button-bg);
+$var-button-bg-hover: var(--col-button-bg-hover);
+$var-button-text: var(--col-button-text);
+$var-button-text-hover: var(--col-button-text-hover);
+$var-button-disabled: var(--col-button-disabled);
+$var-button-disabled-text: var(--col-button-disabled-text);
+
+// Tables
+$var-table-border: var(--col-table-border);
+$var-table-shade: var(--col-table-shade);
+$var-table-text: var(--col-table-text);
+
+// Forms
+$var-form-border: var(--col-form-border);
+$var-form-focus-outline: var(--col-form-focus-outline);
+$var-form-placeholder: var(--col-form-placeholder);
+$var-form-text: var(--col-form-text);
+$var-form-bg: var(--col-form-bg);
+$var-form-unchecked-bg: var(--col-form-unchecked-bg);
+$var-form-checked-bg: var(--col-form-checked-bg);
+$var-form-check: var(--col-form-check);
+$var-form-select-icon: var(--col-form-select-icon);
+
+@mixin var-bg-properties {
+  background-color: $var-background;
+  color: $var-text;
+}
+
+@mixin var-default-bg {
+  color-scheme: light;
+
+  --col-background: #{$col-white};
+
+  // Text
+  --col-text: #{$col-text};
+  --col-text-highlight: #{$col-white};
+  --col-text-highlight-bg: #{$col-orange};
+  --col-text-light: #{$col-gray-600};
+  --col-text-marked: #{$col-text};
+  --col-text-marked-bg: #{$col-orange-300};
+  --col-hori-rule: #{$col-orange};
+  --col-list-marker: #{$col-orange};
+
+  // Links
+  --col-link: #{$col-orange};
+  --col-link-hover: #{$col-orange-700};
+  --col-link-decoration: #{$col-orange};
+  --col-link-decoration-hover: #{$col-orange-700};
+
+  // Code
+  --col-code-bg: #{$col-code-bg-light};
+  --col-code-border: #{$col-code-border-light};
+  --col-code-text: #{$col-code-text-light};
+
+  // Buttons
+  --col-button-bg: #{$col-orange};
+  --col-button-bg-hover: #{$col-orange-700};
+  --col-button-text: #{$col-white};
+  --col-button-text-hover: #{$col-white};
+  --col-button-disabled: #{$col-gray-300};
+  --col-button-disabled-text: #{$col-gray-500};
+
+  // Tables
+  --col-table-border: #{$col-gray-200};
+  --col-table-shade: #{$col-gray-100};
+  --col-table-text: #{$col-text};
+
+  // Forms
+  --col-form-border: #{$col-gray};
+  --col-form-focus-outline: #{$col-orange};
+  --col-form-placeholder: #{$col-gray-400};
+  --col-form-text: #{$col-text};
+  --col-form-bg: #{$col-white};
+  --col-form-unchecked-bg: #{$col-gray-100};
+  --col-form-checked-bg: #{$col-orange};
+  --col-form-check: #{$col-white};
+  --col-form-select-icon: url('../Icons/select.svg');
+
+  @include var-bg-properties;
+}
+
+:root {
+  @include var-default-bg;
+}
+
+@mixin var-orange-bg {
+  color-scheme: light;
+
+  --col-background: #{$col-orange};
+
+  // Text
+  --col-text: #{$col-white};
+  --col-text-highlight: #{$col-white};
+  --col-text-highlight-bg: #{$col-gray};
+  --col-text-light: #{$col-gray-50};
+  --col-text-marked: #{$col-white};
+  --col-text-marked-bg: #{$col-orange-700};
+  --col-hori-rule: #{$col-gray-100};
+  --col-list-marker: #{$col-white};
+
+  // Links
+  --col-link: #{$col-white};
+  --col-link-hover: #{$col-white};
+  --col-link-decoration: #{$col-white};
+  --col-link-decoration-hover: #{$col-white};
+
+  // Code
+  --col-code-bg: #{$col-code-bg-light};
+  --col-code-border: #{$col-code-border-light};
+  --col-code-text: #{$col-code-text-light};
+
+  // Buttons
+  --col-button-bg: #{$col-gray};
+  --col-button-bg-hover: #{$col-gray-900};
+  --col-button-text: #{$col-white};
+  --col-button-text-hover: #{$col-white};
+  --col-button-disabled: #{$col-orange-800};
+  --col-button-disabled-text: #{$col-orange-950};
+
+  // Tables
+  --col-table-border: #{$col-orange-800};
+  --col-table-shade: #{$col-orange-700};
+  --col-table-text: #{$col-white};
+
+  // Forms
+  --col-form-border: #{$col-gray-900};
+  --col-form-focus-outline: #{$col-gray-900};
+  --col-form-placeholder: #{$col-gray-500};
+  --col-form-text: #{$col-text};
+  --col-form-bg: #{$col-gray-50};
+  --col-form-unchecked-bg: #{$col-orange-700};
+  --col-form-checked-bg: #{$col-white};
+  --col-form-check: #{$col-orange};
+  --col-form-select-icon: url('../Icons/select.svg');
+
+  @include var-bg-properties;
+}
+
+@mixin var-gray-bg {
+  color-scheme: dark;
+
+  --col-background: #{$col-gray};
+
+  // Text
+  --col-text: #{$col-white};
+  --col-text-highlight: #{$col-white};
+  --col-text-highlight-bg: #{$col-orange};
+  --col-text-light: #{$col-gray-100};
+  --col-text-marked: #{$col-white};
+  --col-text-marked-bg: #{$col-gray-950};
+  --col-hori-rule: #{$col-gray-300};
+  --col-list-marker: #{$col-orange-500};
+
+  // Links
+  --col-link: #{$col-orange};
+  --col-link-hover: #{$col-orange-500};
+  --col-link-decoration: #{$col-orange};
+  --col-link-decoration-hover: #{$col-orange-500};
+
+  // Code
+  --col-code-bg: #{$col-code-bg-dark};
+  --col-code-border: #{$col-code-border-dark};
+  --col-code-text: #{$col-code-text-dark};
+
+  // Buttons
+  --col-button-bg: #{$col-orange};
+  --col-button-bg-hover: #{$col-orange-500};
+  --col-button-text: #{$col-white};
+  --col-button-text-hover: #{$col-white};
+  --col-button-disabled: #{$col-gray-950};
+  --col-button-disabled-text: #{$col-gray-200};
+
+  // Tables
+  --col-table-border: #{$col-gray-950};
+  --col-table-shade: #{$col-gray-900};
+  --col-table-text: #{$col-white};
+
+  // Forms
+  --col-form-border: #{$col-gray};
+  --col-form-focus-outline: #{$col-orange};
+  --col-form-placeholder: #{$col-gray-400};
+  --col-form-text: #{$col-text};
+  --col-form-bg: #{$col-white};
+  --col-form-unchecked-bg: #{$col-gray-200};
+  --col-form-checked-bg: #{$col-orange};
+  --col-form-check: #{$col-white};
+  --col-form-select-icon: url('../Icons/select.svg');
+
+  @include var-bg-properties;
+}
+
+@mixin var-blue-bg {
+  color-scheme: dark;
+
+  --col-background: #{$col-blue};
+
+  // Text
+  --col-text: #{$col-white};
+  --col-text-highlight: #{$col-white};
+  --col-text-highlight-bg: #{$col-orange};
+  --col-text-light: #{$col-gray-100};
+  --col-text-marked: #{$col-white};
+  --col-text-marked-bg: #{$col-gray-950};
+  --col-hori-rule: #{$col-gray-300};
+  --col-list-marker: #{$col-orange-500};
+
+  // Links
+  --col-link: #{$col-white};
+  --col-link-hover: #{$col-white};
+  --col-link-decoration: #{$col-white};
+  --col-link-decoration-hover: #{$col-orange-400};
+
+  // Code
+  --col-code-bg: #{$col-code-bg-dark};
+  --col-code-border: #{$col-code-border-dark};
+  --col-code-text: #{$col-code-text-dark};
+
+  // Buttons
+  --col-button-bg: #{$col-white};
+  --col-button-bg-hover: #{$col-white};
+  --col-button-text: #{$col-text};
+  --col-button-text-hover: #{$col-text};
+  --col-button-disabled: #{$col-gray-950};
+  --col-button-disabled-text: #{$col-gray-200};
+
+  // Tables
+  --col-table-border: #{$col-gray-950};
+  --col-table-shade: #{$col-blue-700};
+  --col-table-text: #{$col-white};
+
+  // Forms
+  --col-form-border: #{$col-white};
+  --col-form-focus-outline: #{$col-white};
+  --col-form-placeholder: #{$col-gray-100};
+  --col-form-text: #{$col-white};
+  --col-form-bg: #{$col-blue-700};
+  --col-form-unchecked-bg: #{$col-blue-700};
+  --col-form-checked-bg: #{$col-white};
+  --col-form-check: #{$col-orange};
+  --col-form-select-icon: url('../Icons/select-white.svg');
+
+  @include var-bg-properties;
+}

@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:spaceless>
+    <div class="toolbar">
+      <div class="inner inner--text">
+        <a href="{f:uri.page(pageUid: settings.idRootPage)}{f:if(condition: '{data.uid} == {settings.idRootPage}', then: '#top')}" style="display: inline-block">
+          <span class="visually-hidden">Back to top</span>
+          <f:image class="toolbar__logo" src="EXT:typo3_functional_colors/Resources/Public/Images/logo.svg" alt="TYPO3 Logo" />
+        </a>
+      </div>
+    </div>
+
+		<main id="top main" class="main main--{f:if(condition: '{data.layout} == 1', then: 'onscroll-fading', else: 'default')}">
+      <f:if condition="{data.layout} == 1">
+        <div class="main__dynamic-background bg bg--default"></div>
+      </f:if>
+      <f:render section="Main"  />
+		</main>
+</f:spaceless>
+
+</html>

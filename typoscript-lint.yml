@@ -1,0 +1,20 @@
+paths:
+  - packages
+filePatterns:
+  - '*.typoscript'
+  - '*.tsconfig'
+sniffs:
+  - class: DeadCode
+    disabled: true
+  - class: Indentation
+    parameters:
+      useSpaces: true
+      indentPerLevel: 2
+      indentConditions: true
+  - class: NestingConsistency
+    disabled: true
+  - class: RepeatingRValue
+    parameters:
+      allowedRightValues:
+        - 'directory'
+        - 'register:pageUid'

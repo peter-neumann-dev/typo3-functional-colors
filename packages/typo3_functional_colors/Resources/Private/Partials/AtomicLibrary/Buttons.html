@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="library-section">
+    <f:render partial="AtomicLibrary/Section/Header" arguments="{
+        title: 'Buttons',
+        bgAll: 1
+    }"/>
+    <div class="library-section__content">
+        <p style="display: flex; flex-wrap: wrap; gap: 1.6rem;">
+            <a href="#" class="button">Primary Button</a>
+            <a href="#" class="button button--secondary">Secondary Button</a>
+        </p>
+        <p style="display: flex; flex-wrap: wrap; gap: 1.6rem;">
+            <a href="#" class="button button--small">Small Primary Button</a>
+            <a href="#" class="button button--secondary button--small">Small Secondary Button</a>
+        </p>
+        <div style="max-width: 50rem; border: .1rem solid currentColor; padding: 1em; margin-block-end: 1em;">
+            <p style="display: grid; gap: 1.6rem;">
+                <a href="#" class="button button--block">Primary Button Full Width</a>
+                <a href="#" class="button button--secondary button--block">Secondary Button Full Width</a>
+            </p>
+        </div>
+        <p style="display: flex; flex-wrap: wrap; gap: 1.6rem;">
+            <button class="button" disabled>Primary Button Disabled</button>
+            <button class="button button--secondary" disabled>Secondary Button Disabled</button>
+        </p>
+    </div>
+</div>
+
+</html>

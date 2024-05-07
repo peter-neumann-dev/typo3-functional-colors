@@ -1,0 +1,43 @@
+{
+  "name": "typo3-functional-colors",
+  "private": true,
+  "description": "A TYPO3 demo package to showcase the functional colors system",
+  "author": "Peter Neumann",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c --environment BUILD:production",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css": "stylelint 'packages/typo3_functional_colors/Resources/Private/StyleSheets/**/*.scss'",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
+    "lint:js": "eslint 'packages/typo3_functional_colors/Resources/Private/JavaScript/**/*.js'",
+    "prettier": "prettier . --write",
+    "watch": "rollup -c -w"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.2.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.1",
+    "eslint": "^9.2.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.1.0",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "prettier-plugin-packagejson": "^2.5.0",
+    "prettier-plugin-sh": "^0.14.0",
+    "prettier-plugin-sql": "^0.18.0",
+    "rollup": "^4.17.2",
+    "rollup-plugin-scss": "^4.0.0",
+    "sass": "^1.76.0",
+    "stylelint": "^16.5.0",
+    "stylelint-config-standard-scss": "^13.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

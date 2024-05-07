@@ -1,0 +1,9 @@
+name: peter-neumann-dev/text
+group: common
+priority: 95
+fields:
+  - identifier: TYPO3/Header
+    type: Basic
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true

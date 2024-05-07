@@ -1,0 +1,18 @@
+lib.parseFunc_RTE {
+  externalBlocks {
+    # Add class to style independent from menus etc. to all lists
+    ul {
+      stripNL = 1
+      stdWrap {
+        parseFunc =< lib.parseFunc
+        HTMLparser = 1
+        HTMLparser {
+          tags.ul.fixAttrib.class {
+            default = list-normal
+          }
+          keepNonMatchedTags = 1
+        }
+      }
+    }
+  }
+}

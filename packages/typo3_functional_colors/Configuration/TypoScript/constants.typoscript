@@ -1,0 +1,19 @@
+# =============================
+# ===== Include constants =====
+# =============================
+
+# Include extensions constants
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript'
+
+# Local Constants
+typo3_functional_colors {
+  layoutRootPath = EXT:typo3_functional_colors/Resources/Private/Layouts/
+  partialRootPath = EXT:typo3_functional_colors/Resources/Private/Partials/
+  templateRootPath = EXT:typo3_functional_colors/Resources/Private/Templates/
+
+  contentLayoutRootPath = EXT:typo3_functional_colors/Resources/Private/Layouts/Content/
+  contentPartialRootPath < .partialRootPath
+  contentTemplateRootPath = EXT:typo3_functional_colors/Resources/Private/Templates/Content/
+
+  pageTitleSuffix = | TYPO3 Functional Colors
+}

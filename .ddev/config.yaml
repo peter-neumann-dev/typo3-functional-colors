@@ -1,0 +1,24 @@
+name: typo3-functional-colors
+type: typo3
+docroot: public
+php_version: '8.3'
+webserver_type: apache-fpm
+router_http_port: '80'
+router_https_port: '443'
+xdebug_enabled: false
+additional_hostnames: []
+additional_fqdns: []
+database:
+  type: mariadb
+  version: '10.11'
+composer_version: '2'
+nodejs_version: '20'
+use_dns_when_possible: true
+timezone: Europe/Berlin
+web_environment:
+  - TYPO3_CONTEXT=Development
+
+hooks:
+  post-start:
+    # Install composer dependencies and clear scripts
+    - exec-host: ddev post-start

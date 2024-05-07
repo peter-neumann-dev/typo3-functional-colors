@@ -1,0 +1,14 @@
+page.headerData {
+  10 < lib.pageTitle
+  10.wrap = <title>|</title>
+
+  20 = TEXT
+  20.value (
+
+<link rel="icon" href="{path : EXT:typo3_functional_colors/Resources/Public/Icons/Favicon/favicon.svg}?v=8a170efs" type="image/svg+xml">
+<link rel="icon" href="{path : EXT:typo3_functional_colors/Resources/Public/Icons/Favicon/favicon.png}?v=8a170efs" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{path : EXT:typo3_functional_colors/Resources/Public/Icons/Favicon/apple-touch-icon.png}?v=8a170efs" type="image/png">
+
+  )
+  20.insertData = 1
+}

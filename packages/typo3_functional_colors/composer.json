@@ -1,0 +1,30 @@
+{
+  "name": "peter-neumann-dev/typo3-functional-colors",
+  "type": "typo3-cms-extension",
+  "description": "TYPO3 Functional Colors",
+  "version": "v1.0.0",
+  "authors": [
+    {
+      "name": "Peter Neumann",
+      "email": "hello@peter-neumann.dev",
+      "homepage": "https://www.peter-neumann.dev/"
+    }
+  ],
+  "suggest": {
+    "contentblocks/content-blocks": "*",
+    "typo3/cms-core": "*",
+    "typo3/cms-fluid": "*",
+    "typo3/cms-fluid-styled-content": "*",
+    "typo3/cms-rte-ckeditor": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "PeterNeumannDev\\Typo3FunctionalColors\\": "Classes"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "typo3_functional_colors"
+    }
+  }
+}

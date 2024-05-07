@@ -1,0 +1,107 @@
+@use 'sass:color';
+@use '../Abstracts' as lib;
+
+// Reset all default styles
+button,
+.button {
+  overflow: visible; // Show the overflow in IE und Edge.
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  text-transform: none; // Remove the inheritance of text transform in Firefox.
+  cursor: pointer;
+  appearance: none;
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  &:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+// ===================
+// ===== Buttons =====
+// ===================
+
+.button,
+button[type='submit'] {
+  display: inline-flex;
+  gap: 0.4em;
+  justify-content: center;
+  align-items: center;
+  padding-block: 0.3em;
+  padding-inline: 0.8em;
+  border: 0.2rem solid lib.$var-button-bg;
+  background-color: lib.$var-button-bg;
+  border-radius: 0.4rem;
+  color: lib.$var-button-text;
+  font-size: inherit;
+  font-family: lib.$font-main;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-property: border-color, background-color, box-shadow, color;
+
+  &:hover:not(:disabled, .button--disabled) {
+    border-color: lib.$var-button-bg-hover;
+    background-color: lib.$var-button-bg-hover;
+    color: lib.$var-button-text-hover;
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid lib.$var-button-bg-hover;
+    outline-offset: 0.2rem;
+  }
+}
+
+// Default Button
+.button {
+  &--small {
+    padding-block: 0.2em;
+    padding-inline: 0.5em;
+    font-size: lib.$font-small-size-fluid;
+  }
+
+  &--block {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.button--secondary {
+  border-color: lib.$var-button-bg;
+  background-color: transparent;
+  color: lib.$var-button-bg;
+
+  &:hover:not(:disabled, .button--disabled) {
+    background-color: transparent;
+    color: lib.$var-button-bg-hover;
+  }
+}
+
+// Disabled buttons (keep last)
+.button:disabled,
+.button--disabled {
+  border-color: lib.$var-button-disabled;
+  background-color: lib.$var-button-disabled;
+  color: lib.$var-button-disabled-text;
+  opacity: 0.75;
+  cursor: not-allowed;
+
+  &.button--secondary {
+    background-color: transparent;
+  }
+}

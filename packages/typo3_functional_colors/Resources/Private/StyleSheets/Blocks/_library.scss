@@ -1,0 +1,85 @@
+@use '../Abstracts/index' as lib;
+@use 'sass:color';
+
+// ==========================
+// ===== Atomic Library =====
+// ==========================
+
+.library {
+  padding-block: 5rem 10rem;
+  padding-inline: lib.$size-16;
+
+  @include lib.breakpoint-min(sm) {
+    padding-inline: lib.$size-24;
+  }
+
+  &__header {
+    margin-block-end: lib.$size-64;
+  }
+}
+
+.library-section {
+  margin-block-end: lib.$size-32;
+
+  .form-element:not(.form-element-fieldset) {
+    margin-block-end: lib.$size-16;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: lib.$size-16;
+    padding-block: lib.$size-12;
+    padding-inline: lib.$size-16;
+    border: 1px solid lib.$col-black;
+    background-color: #f3f4f6;
+    font-weight: bold;
+    font-size: 1.6rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      'Liberation Mono', 'Courier New', monospace;
+    line-height: 1.2;
+
+    @include lib.breakpoint-min(sm) {
+      flex-direction: row;
+      column-gap: lib.$size-16;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: lib.$size-24;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__color-switch {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: lib.$size-32;
+    aspect-ratio: 1 / 1;
+    border: 0.1rem solid lib.$col-black;
+
+    &:not(:last-of-type) {
+      margin-inline-end: lib.$size-8;
+    }
+
+    &:focus-visible,
+    &--active {
+      outline: 2px solid lib.$col-black !important;
+      outline-offset: 1px;
+    }
+  }
+
+  &__content {
+    padding: lib.$size-24 lib.$size-16;
+    border-width: 0 1px 1px;
+    border-style: solid;
+    border-color: lib.$col-black;
+
+    @include lib.breakpoint-min(sm) {
+      padding-inline: lib.$size-24;
+    }
+  }
+}

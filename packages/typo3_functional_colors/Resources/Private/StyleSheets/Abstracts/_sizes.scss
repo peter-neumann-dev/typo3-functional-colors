@@ -1,0 +1,33 @@
+// =========================
+// ===== Global spaces =====
+// =========================
+
+// Global set of default sizes to add as paddings, margins etc.
+// Avoid extending those values, to keep the design consistent.
+// If you need a special size, add it statically to the component as an exception.
+
+$size-8: 0.8rem;
+$size-12: 1.2rem;
+$size-16: 1.6rem;
+$size-24: 2.4rem;
+$size-32: 3.2rem;
+$size-48: 4.8rem;
+$size-64: 6.4rem;
+$size-96: 9.6rem;
+$size-128: 12.8rem;
+
+// Content Widths
+$inner-text: 85rem;
+$inner-content: 120rem;
+$inner-max: 150rem;
+
+// Space between elements
+$frame-block-padding: $size-48;
+$frame-block-padding-desktop: $size-64;
+
+// Space to viewport border
+$side-padding: $size-24;
+$side-padding-desktop: $size-48;
+
+// Scroll margin of anchor links
+$scroll-margin-top: 20vh;

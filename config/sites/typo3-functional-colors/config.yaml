@@ -1,0 +1,17 @@
+rootPageId: 1
+base: 'https://typo3-functional-colors.ddev.site/'
+languages:
+  - languageId: 0
+    title: English
+    navigationTitle: English
+    base: /
+    locale: en_US.UTF-8
+    iso-639-1: en
+    hreflang: en-US
+    direction: ltr
+    typo3Language: default
+    flag: en-us-gb
+    fallbackType: strict
+    fallbacks: ''
+    enabled: true
+    websiteTitle: ''

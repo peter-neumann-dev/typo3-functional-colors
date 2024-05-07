@@ -1,0 +1,12 @@
+# ====================================
+# ===== Global pages adjustments =====
+# ====================================
+
+TCEFORM {
+  pages {
+    layout {
+      removeItems = 2,3
+      altLabels.1 = On-scroll fading demo
+    }
+  }
+}

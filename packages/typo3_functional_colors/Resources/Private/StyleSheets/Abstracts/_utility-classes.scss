@@ -1,0 +1,44 @@
+@use 'index' as lib;
+
+// ==========================
+// ===== GLOBAL CLASSES =====
+// ==========================
+
+// Background Colors
+.bg--default {
+  @include lib.var-default-bg;
+}
+
+.bg--orange {
+  @include lib.var-orange-bg;
+}
+
+.bg--blue {
+  @include lib.var-blue-bg;
+}
+
+.bg--gray {
+  @include lib.var-gray-bg;
+}
+
+// Scroll anchors header height offset
+.scroll-anchor {
+  scroll-margin-top: lib.$scroll-margin-top;
+}
+
+// Content widths
+.inner {
+  margin-inline: auto;
+
+  &--text {
+    max-width: lib.$inner-text;
+  }
+
+  &--content {
+    max-width: lib.$inner-content;
+  }
+
+  &--max {
+    max-width: lib.$inner-max;
+  }
+}

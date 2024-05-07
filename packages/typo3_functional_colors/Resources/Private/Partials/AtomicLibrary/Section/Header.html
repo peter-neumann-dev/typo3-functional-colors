@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="library-section__header">
+    <div class="library-section__title">
+        <span>{title}</span>
+    </div>
+    <div class="library-section__actions">
+        <button class="library-section__color-switch bg bg--default"><span class="visually-hidden">Switch background color to default</span></button>
+        <f:if condition="{bgOrange} || {bgAll}">
+            <button class="library-section__color-switch bg bg--orange"><span class="visually-hidden">Switch background color to orange</span></button>
+        </f:if>
+        <f:if condition="{bgGray} || {bgAll}">
+            <button class="library-section__color-switch bg bg--gray"><span class="visually-hidden">Switch background color to gray</span></button>
+        </f:if>
+        <f:if condition="{bgBlue} || {bgAll}">
+            <button class="library-section__color-switch bg bg--blue"><span class="visually-hidden">Switch background color to blue</span></button>
+        </f:if>
+    </div>
+</div>
+
+</html>

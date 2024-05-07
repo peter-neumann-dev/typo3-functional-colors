@@ -1,0 +1,42 @@
+@use '../Abstracts' as lib;
+
+// =================
+// ===== Lists =====
+// =================
+
+// Remove default list styles for navigations etc.
+ul {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+// Shared styles
+ul.list-normal,
+ol {
+  display: block;
+  margin-block: 1em;
+  margin-inline: 0;
+  padding-inline-start: 1.3em;
+
+  > li {
+    padding-inline-start: lib.$size-8;
+
+    &:not(:last-of-type) {
+      margin-block-end: lib.$size-12;
+    }
+
+    &::marker {
+      color: lib.$var-list-marker;
+    }
+  }
+}
+
+// Unordered lists
+ul.list-normal {
+  list-style: disc;
+}
+
+// Ordered lists
+ol {
+  // ...
+}

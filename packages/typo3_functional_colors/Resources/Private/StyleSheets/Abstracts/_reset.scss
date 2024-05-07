@@ -1,0 +1,105 @@
+// =================
+// ===== Reset =====
+// =================
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+html {
+  // Set our base font-size to % and use relative units to handle
+  // all other font-size rules in our CSS. This allows users to change
+  // the base font size in their browser.
+
+  // Set global equivalent to 10px based on the browser default 16px.
+  // Now you can set 1.6rem which is the same like 16px.
+
+  font-size: 62.5%;
+
+  // Enable smooth scrolling
+  scroll-behavior: smooth;
+}
+
+p,
+form,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+// Explicitly remove focus outline in Chromium when it shouldn't be
+// visible (e.g. as result of mouse click or touch tap). It already
+// should be doing this automatically, but seems to currently be
+// confused and applies its very visible two-tone outline anyway.
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+// Remove inner border and padding from Firefox, but don't restore the outline
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+// Remove list styles on ul, ol elements with a list role,
+// which suggests default styling will be removed
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+details {
+  display: block;
+}
+
+template,
+[hidden] {
+  display: none;
+}
+
+em {
+  font-style: italic;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace;
+}
+
+abbr[title] {
+  border-block-end: none;
+  text-decoration: underline;
+}

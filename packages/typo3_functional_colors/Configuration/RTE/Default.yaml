@@ -1,0 +1,28 @@
+imports:
+  - {
+      resource: 'EXT:typo3_functional_colors/Configuration/RTE/Processing.yaml',
+    }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml' }
+  - { resource: 'EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml' }
+
+editor:
+  config:
+    debug: false
+    contentsCss:
+      - 'EXT:rte_ckeditor/Resources/Public/Css/contents.css'
+    format_tags: 'p'
+    removePlugins:
+      - whitespace
+    toolbar:
+      items:
+        - link
+        - bold
+        - italic
+        - underline
+        - subscript
+        - superscript
+        - '|'
+        - bulletedList
+        - numberedList
+        - '|'
+        - removeFormat

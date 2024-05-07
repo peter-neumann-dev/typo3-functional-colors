@@ -1,0 +1,33 @@
+# Access data of the page record by pageUid
+# <f:cObject typoscriptObjectPath="lib.pageInfo" data="{pageUid: '{data.uid}', pageField: 'title'}" />
+
+lib.pageInfo = COA
+lib.pageInfo {
+  5 = LOAD_REGISTER
+  5 {
+    # Set the content's field (default: title):
+    pageField.cObject = TEXT
+    pageField.cObject {
+      field = pageField
+      ifEmpty = title
+    }
+
+    # Allows to override the current page ID:
+    pageUid.cObject = TEXT
+    pageUid.cObject {
+      field = pageUid
+      ifEmpty.data = TSFE:id
+    }
+  }
+
+  20 = RECORDS
+  20 {
+    source.data = register:pageUid
+    tables = pages
+    dontCheckPid = 1
+    conf.pages = TEXT
+    conf.pages.field.data = register:pageField
+  }
+
+  90 = RESTORE_REGISTER
+}

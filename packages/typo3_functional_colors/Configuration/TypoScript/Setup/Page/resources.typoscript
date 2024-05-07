@@ -1,0 +1,19 @@
+page {
+  includeJS >
+  includeJSlibs >
+  jsInline >
+
+  includeJSFooter >
+  includeJSFooterlibs >
+  jsFooterInline >
+
+  includeJSFooter {
+    aos = EXT:typo3_functional_colors/Resources/Public/Plugins/aos.js
+    main = EXT:typo3_functional_colors/Resources/Public/JavaScript/main.min.js
+  }
+
+  includeCSS {
+    aos = EXT:typo3_functional_colors/Resources/Public/Plugins/aos.css
+    main = EXT:typo3_functional_colors/Resources/Public/StyleSheets/main.min.css
+  }
+}

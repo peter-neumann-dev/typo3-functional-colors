@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# Name of the DDEV project
+project_name=typo3-functional-colors
+
+# ==========================================
+# ===== Script variables and functions =====
+# ==========================================
+
+# Colors
+readonly color_restore='\033[0m'
+readonly color_red='\033[0;31m'
+readonly color_green='\033[0;32m'
+readonly color_blue='\033[0;34m'
+readonly color_gray='\033[0;37m'
+
+# Emojis
+readonly emoji_wrench='🔧'
+readonly emoji_x='❌ '
+readonly emoji_check_mark='✅ '
+
+message() {
+  local message="${1}"
+  local color="${2:-}"
+  local emoji="${3:-}"
+
+  if [ -n "${emoji}" ]; then
+    echo -e "${emoji} ${color}${message}${color_restore}"
+  else
+    echo -e "${color}${message}${color_restore}"
+  fi
+}
+
+separator() {
+  message "====================================================" "${color_gray}"
+}
+
+status() {
+  message "${1}" "${color_blue}" "${emoji_wrench}"
+}
+
+check_result() {
+  local exit_code=$?
+
+  if [ "${exit_code}" -eq 0 ]; then
+    message "Done" "${color_green}" "${emoji_check_mark}"
+  else
+    message "Failed" "${color_red}" "${emoji_x}" && exit ${exit_code}
+  fi
+}
+
+# ===========================
+# ===== Starting script =====
+# ===========================
+
+separator
+status "Linting JavaScript with ESLint ..."
+docker exec -w /var/www/html -i ddev-${project_name}-web npm run lint:js
+check_result
+
+separator
+status "Linting SCSS with stylelint ..."
+docker exec -w /var/www/html -i ddev-${project_name}-web npm run lint:css
+check_result
+
+separator
+status "Linting TYPO3 TypoScript ..."
+docker exec -w /var/www/html -i ddev-${project_name}-web vendor/bin/typoscript-lint
+check_result

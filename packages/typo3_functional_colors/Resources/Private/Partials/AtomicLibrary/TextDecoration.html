@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="library-section">
+    <f:render partial="AtomicLibrary/Section/Header" arguments="{
+        title: 'Text Decoration',
+        bgAll: 1
+    }"/>
+    <div class="library-section__content">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3.2rem;">
+            <div class="col">
+                <p>
+                    <strong>strong (semantic)</strong><br>
+                    <b>bold (style related)</b><br>
+                    <em>emphasis (semantic)</em><br>
+                    <i>italicized (style related)</i><br>
+                    <strong><em>bold emphasis</em></strong><br>
+                    <strong><i>bold italicized</i></strong><br>
+                    <span>sub<sub>element</sub></span><br>
+                    <span>sup<sup>element</sup></span><br>
+                </p>
+            </div>
+            <div class="col">
+                <p>
+                    <mark>mark</mark><br>
+                    <abbr title="Accessibility">A11Y</abbr><br>
+                    <code>code element</code><br>
+                    <s>strikethrough</s><br>
+                    <u>underlined</u><br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

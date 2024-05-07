@@ -1,0 +1,27 @@
+processing:
+  mode: default
+  allowTags:
+    - a
+    - br
+    - div
+    - em
+    - i
+    - li
+    - ol
+    - p
+    - span
+    - strong
+    - sub
+    - sup
+    - ul
+  allowTagsOutside: [div]
+  allowAttributes:
+    [class, id, title, dir, lang, xml:lang, itemscope, itemtype, itemprop]
+  HTMLparser_db:
+    noAttrib: br
+    denyTags: img
+    removeTags:
+      [center, font, link, meta, o:p, sdfield, strike, style, title, u]
+    keepNonMatchedTags: protect
+    htmlSanitize:
+      build: default

@@ -1,0 +1,24 @@
+@use '../Abstracts/index' as lib;
+
+// ===================
+// ===== Toolbar =====
+// ===================
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  inset-inline-start: 0;
+  z-index: 50;
+  width: 100%;
+  padding-inline: lib.$side-padding;
+  padding-block: lib.$size-16;
+  background-color: lib.$col-white;
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 10%),
+    0 4px 6px -4px rgb(0 0 0 / 10%);
+
+  &__logo {
+    display: block;
+    width: 13rem;
+  }
+}

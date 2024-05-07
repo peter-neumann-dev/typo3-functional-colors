@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<be:link.editRecord table="tt_content" uid="{data.uid}">
+
+    <f:if condition="{data.image}">
+        <p class="row row-cols-auto g-2 align-items-start">
+            <f:for each="{data.image}" as="image">
+                <span class="col">
+                    <f:image image="{image}" alt="{image.alternative}" height="75" loading="lazy" fileExtension="webp" style="opacity: {f:if(condition: image.properties.hidden, then: '0.2', else: '1')};"/>
+                </span>
+            </f:for>
+        </p>
+    </f:if>
+
+</be:link.editRecord>
+
+</html>

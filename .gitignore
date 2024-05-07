@@ -1,0 +1,54 @@
+# =========================
+# ===== TYPO3 Project =====
+# =========================
+
+# Ignore temporary files (left by editors and OS)
+*~
+*.bak
+*.swp
+.DS_Store
+out
+
+# Ignore by common IDEs used directories/files
+nbproject
+*.idea
+*.iml
+*.project
+.buildpath
+.settings
+.TemporaryItems
+.webprj
+
+# Temporary files and folders
+.cache
+.php_cs.cache
+.php-cs-fixer.cache
+.sass-cache
+.session
+*.log
+
+# DDEV
+.ddev/**/*
+!.ddev/config.yaml
+
+!.ddev/commands
+!.ddev/commands/web
+!.ddev/commands/web/clear.sh
+!.ddev/commands/web/post-start.sh
+!.ddev/commands/web/typo3-lint.sh
+
+# TYPO3
+public/**/*
+!public/.htaccess
+
+# Environment variables
+*.env
+
+# Composer
+/var
+/vendor
+
+# Node.js and build assets
+/node_modules
+/packages/typo3_functional_colors/Resources/Public/JavaScript/**/*
+/packages/typo3_functional_colors/Resources/Public/StyleSheets/**/*

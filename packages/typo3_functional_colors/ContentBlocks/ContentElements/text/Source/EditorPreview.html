@@ -1,0 +1,9 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<be:link.editRecord table="tt_content" uid="{data.uid}">
+  <f:if condition="{data.bodytext}">
+    <f:format.crop maxCharacters="1000"><f:format.stripTags allowedTags="<p><br>">{data.bodytext}</f:format.stripTags></f:format.crop>
+  </f:if>
+</be:link.editRecord>
+
+</html>

@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+    <f:if condition="{data._raw}">
+        <f:then><f:variable name="data_prefix" value="data._raw" /></f:then>
+        <f:else><f:variable name="data_prefix" value="data" /></f:else>
+    </f:if>
+
+    <div id="c{data.uid}" class="frame frame--type-{{data_prefix}.CType}{f:if(condition: '{{data_prefix}.list_type}', then: ' frame--list-type-{{data_prefix}.list_type}')} frame--layout-{{data_prefix}.layout} bg bg--{{data_prefix}.frame_class}" data-tstamp="{{data_prefix}.tstamp}">
+
+        <f:comment><!-- Keep anchor ids for translated content and shortcuts --></f:comment>
+        <f:if condition="{{data_prefix}._LOCALIZED_UID}"><a id="c{{data_prefix}._LOCALIZED_UID}" class="scroll-anchor"></a></f:if>
+        <f:if condition="{{data_prefix}.l10n_source}"><a id="c{{data_prefix}.l10n_source}" class="scroll-anchor"></a></f:if>
+        <f:if condition="{parentRecord.CType} = 'shortcut'"><a id="c{parentRecord.uid}" class="scroll-anchor"></a></f:if>
+
+        <div class="inner inner--text">
+          <div data-aos="{f:if(condition: '{data.pid} == {settings.idRootPage}', then:'fade-up')}" data-aos-duration="1000" data-aos-offset="500" data-aos-delay="150">
+            <f:render partial="Content/Header" arguments="{_all}" />
+            <f:render section="Main" optional="true" />
+          </div>
+        </div>
+    </div>
+
+</f:spaceless>
+</html>

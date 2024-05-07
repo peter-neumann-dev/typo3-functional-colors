@@ -1,0 +1,41 @@
+@use 'sass:color';
+@use 'sass:math';
+
+// =====================
+// ===== FUNCTIONS =====
+// =====================
+
+// Tint a color: mix a color with white
+@function tint-color($color, $weight) {
+  @return color.mix(white, $color, $weight);
+}
+
+// Shade a color: mix a color with black
+@function shade-color($color, $weight) {
+  @return color.mix(black, $color, $weight);
+}
+
+// Returns a CSS clamp function which
+// resolves to $size-at-min-width when page width is below $min-width,
+// $size-at-max-width when page width is above $max-width,
+// and linearly scales between the two between $min-width and $max-width
+
+@function clamp-calc(
+  $min-width,
+  $max-width,
+  $size-at-min-width,
+  $size-at-max-width
+) {
+  $slope: math.div(
+    $size-at-max-width - $size-at-min-width,
+    $max-width - $min-width
+  );
+  $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
+  $return-value: clamp(
+    #{$size-at-min-width},
+    #{$y-axis-intersection} + #{$slope} * 100vw,
+    #{$size-at-max-width}
+  );
+
+  @return $return-value;
+}

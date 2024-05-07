@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" target-language="de" date="2024-03-17T13:18:26+00:00" product-name="functional-colors/image">
+		<header/>
+		<body>
+			<trans-unit id="title">
+				<source>Image</source>
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>One or more images below each other</source>
+				<target>Ein oder mehrere Bilder unter einander</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

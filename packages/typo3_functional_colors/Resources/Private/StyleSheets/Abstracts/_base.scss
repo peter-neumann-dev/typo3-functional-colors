@@ -1,0 +1,49 @@
+@use 'index' as lib;
+
+// ====================
+// ===== Basetags =====
+// ====================
+
+* {
+  &::selection {
+    background: lib.$var-text-highlight-bg;
+    color: lib.$var-text-highlight;
+  }
+}
+
+body {
+  color: lib.$var-text;
+  font-size: lib.$font-main-size-fluid;
+  font-family: lib.$font-main, sans-serif;
+  font-weight: 500;
+  line-height: lib.$font-main-line-height;
+}
+
+// ==================================
+// ===== Default Content Frames =====
+// ==================================
+
+main > :where(.frame) {
+  padding-inline: lib.$side-padding;
+  scroll-margin-top: lib.$scroll-margin-top;
+
+  @include lib.breakpoint-min(sm) {
+    padding-inline: lib.$side-padding-desktop;
+  }
+}
+
+.frame {
+  padding-block: lib.$frame-block-padding;
+
+  @include lib.breakpoint-min(sm) {
+    padding-block: lib.$frame-block-padding-desktop;
+  }
+
+  // Reduced padding between same background colored frames
+  &.bg--default + .bg--default,
+  &.bg--orange + .bg--orange,
+  &.bg--blue + .bg--blue,
+  &.bg--gray + .bg--gray {
+    padding-block-start: 0;
+  }
+}
